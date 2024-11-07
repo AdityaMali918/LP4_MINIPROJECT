@@ -1,0 +1,95 @@
+/* General reset for margin, padding, and box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the background for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    background-size: cover;
+    color: #fff;
+}
+
+/* Style for the container holding the registration elements */
+.register-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+/* Logo style */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* Styling the input fields */
+.register-box input {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Remove the outline and set a nice border effect on focus */
+.register-box input:focus {
+    outline: none;
+    border: 1px solid #74ebd5;
+}
+
+/* Styling the register button */
+#register-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#register-btn:hover {
+    background-color: #4ea9c1;
+}
+
+/* Error message styling */
+#error-message {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Add a subtle transition to input and button elements */
+input, #register-btn {
+    transition: all 0.3s ease;
+}
+
+/* Error message for username */
+.username-error,
+.email-error,
+.password-error,
+.confirm-password-error {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}

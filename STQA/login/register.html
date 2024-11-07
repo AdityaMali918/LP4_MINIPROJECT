@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SauceDemo - Register</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="logo">Cart Demo - Register</h2>
+        <div class="login-box">
+            <input type="text" id="username" placeholder="Username (3-12 alphanumeric)">
+            <p class="error" id="username-error"></p>
+            
+            <input type="email" id="email" placeholder="Email">
+            <p class="error" id="email-error"></p>
+
+            <input type="password" id="password" placeholder="Password (min 8 chars, 1 letter, 1 number)">
+            <p class="error" id="password-error"></p>
+
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
+            <p class="error" id="confirm-password-error"></p>
+
+            <button id="register-btn">Register</button>
+            <p id="success-message" style="color:green; display:none;">Registration successful!</p>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css"> 
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo">Register</div>
+        <form class="register-box">
+            <input type="text" id="username" placeholder="Username" required>
+            <div class="username-error" id="username-error"></div>
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="email-error" id="email-error"></div>
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="password-error" id="password-error"></div>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <div class="confirm-password-error" id="confirm-password-error"></div>
+            <button type="submit" id="register-btn">Register</button>
+            <div id="success-message" style="display: none;">Registration Successful!</div>
+            <div id="error-message"></div>
+        </form>
+    </div>
+
+    <script src="register.js"></script> 
+</body>
+</html>
