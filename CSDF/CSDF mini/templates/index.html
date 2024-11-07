@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Forensics Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload an Image for Forensics Analysis</h1>
+        <input type="file" id="imageInput" />
+        <button onclick="uploadImage()">Analyze</button>
+
+        <h2>Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        async function uploadImage() {
+            const fileInput = document.getElementById('imageInput');
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            const response = await fetch('http://127.0.0.1:5000/upload', {  // Flask server URL
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();  // Handle JSON response from Flask
+            document.getElementById('results').innerHTML = `
+                <h3>Metadata</h3>
+                <p><strong>Image Width:</strong> ${data.metadata.ImageWidth}</p>
+                <p><strong>Image Length:</strong> ${data.metadata.ImageLength}</p>
+                <p><strong>Date/Time:</strong> ${data.metadata.DateTime}</p>
+                <p><strong>YCbCr Positioning:</strong> ${data.metadata.YCbCrPositioning}</p>
+                <p><strong>Exif Offset:</strong> ${data.metadata.ExifOffset}</p>
+                <p><strong>Resolution Unit:</strong> ${data.metadata.ResolutionUnit}</p>
+                <p><strong>GPS Info:</strong> ${data.metadata.GPSInfo}</p>
+                <p><strong>X Resolution:</strong> ${data.metadata.XResolution}</p>
+                <p><strong>Y Resolution:</strong> ${data.metadata.YResolution}</p>
+                <p><strong>Make:</strong> ${data.metadata.Make}</p>
+                <p><strong>Model:</strong> ${data.metadata.Model}</p>
+                <p><strong>ISO Speed Ratings:</strong> ${data.metadata.ISOSpeedRatings}</p>
+                <p><strong>Exposure Program:</strong> ${data.metadata.ExposureProgram}</p>
+                <p><strong>F-Number:</strong> ${data.metadata.FNumber}</p>
+                <p><strong>Exposure Time:</strong> ${data.metadata.ExposureTime}</p>
+                <p><strong>Sensing Method:</strong> ${data.metadata.SensingMethod}</p>
+                <p><strong>SubSec Time Digitized:</strong> ${data.metadata.SubSecTimeDigitized}</p>
+                <p><strong>MakerNote:</strong> ${data.metadata.MakerNote}</p>
+
+                <h3>Image Hash</h3>
+                <p>${data.hash}</p>
+
+                <h3>Error Level Analysis</h3>
+                <img src="${data.ela_image}" alt="ELA Result" />
+            `;
+        }
+    </script>
+</body>
+
+</html>
