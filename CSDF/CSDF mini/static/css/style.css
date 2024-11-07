@@ -1,0 +1,134 @@
+/* General page styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Center container for content */
+.container {
+    width: 50%;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+/* Input and button styling */
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #007bff;
+    background: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: #e9f3ff;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Result section styling */
+#results {
+    margin-top: 30px;
+    text-align: left;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#results p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+#results img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#results {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
